@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>USER 4</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style>
+    #td,th{
+      padding: 10px;
+    }
+  </style>
+  <body>
+    <h1>USER 4</h1>
+    <a href="/form-add"><button>ADD</button></a>
+    <br>
+    <br>
+    <table border="1">
+      <tr style="background-color: aqua; height:20px">
+        <th> ID </th>
+        <th>  LatLong</th>
+        <th>  Role </th>
+        <th>  OpenHour </th>
+        <th>  DefaultAccount </th>
+        <th>  BankName </th>
+        <th>  BranchName </th>
+        <th>  ACTION </th>
+      </tr>
+      <% user4s.forEach(item => { %>
+        <tr style="text-align: center">
+          <td><%= item._id %></td>
+          <td><%= item.latLong  %></td>
+          <td><%= item.role %></td>
+          <td><%= item.openHour %></td>
+          <td><%= item.defaultAccount %></td>
+          <td><%= item.bankName %></td>
+          <td><%= item.branchName %></td>
+          <td><a style="color:crimson; text-decoration: none;" href="/form-update/<%= item._id %>"> Update </a>||<a style="color:crimson; text-decoration: none;" href="/form-delete/<%= item._id %>"> Delete </a></td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
